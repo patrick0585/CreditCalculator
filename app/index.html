@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="creditCalcApp">
+<head>
+    <meta charset="utf-8">
+    <title>Credit Calculator</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+
+    <script src="lib/jquery/dist/js/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="button-bar/button-bar.module.js"></script>
+    <script src="button-bar/button-bar.component.js"></script>
+    <script src="credit-table/credit-table.module.js"></script>
+    <script src="credit-table/credit-table.component.js"></script>
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Darlehen Rechner</h1>
+        <p class="lead">Bekomme mit dem Rechner einen besseren Überblick über dein Darlehen.</p>
+    </div>
+</div>
+
+<div class="container">
+    <button-bar></button-bar>
+    <credit-table></credit-table>
+</div>
+
+</body>
+</html>

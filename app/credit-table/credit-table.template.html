@@ -1,0 +1,19 @@
+<div id="creditTable" ng-if="$ctrl.cService.elements().length > 0">
+<h3>Darlehen</h3>
+<table class="table table-bordered table-hover">
+	<thead class="table-secondary">
+		<tr>
+			<td ng-repeat="header in headers">{{header}}</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="element in $ctrl.cService.elements()" class="{{element.class}}">
+			<td>{{element.month}}</td>
+			<td>{{element.credit_sum}}</td>
+			<td>{{element.mtl_repayment}}</td>
+			<td>{{element.mtl_zins}}</td>
+			<td>{{element.residual_debt}}</td>
+		</tr>
+	</tbody>
+</table>
+<div>

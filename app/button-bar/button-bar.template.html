@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-lg-2">
+		<label for="kreditsumme">Darlehenssume</label>
+		<div class="input-group">
+			<span class="input-group-text">€</span>
+			<input id="kreditsumme" type="number" class="form-control" placeholder="100.000" ng-model="credit_sum" ng-change="updateTbl()" ng-minlength="3" required="">
+		</div>
+	</div>
+
+	<div class="col-lg-2">
+		<label for="effektivzins">Effektivzins</label>
+		<div class="input-group">
+			<span class="input-group-text">%</span>
+			<input id="effektivzins" type="number" class="form-control" placeholder="1.0" ng-model="interest_rate" ng-change="updateTbl()">
+		</div>
+	</div>
+
+	<div class="col-lg-2">
+		<label for="laufzeit">Laufzeit</label>
+		<div class="input-group">
+			<span class="input-group-text">Jahre</span> 
+			<input id="laufzeit" type="number" class="form-control test-value-input" min="0" placeholder="10" ng-model="running_time" ng-change="updateTbl()">
+		</div>
+	</div>
+
+	<div class="col-lg-2">
+		<label for="mtl_tilgung">Mtl. Tilgung</label>
+		<div class="input-group">
+			<span class="input-group-text">€</span> 
+			<input id="mtl_tilgung" type="number" class="form-control test-value-input" placeholder="100" ng-model="mtl_repayment" ng-change="updateTbl()">
+		</div>
+	</div>
+	<div class="col-lg-2">
+		<label for="mtl_tilgung">Sondertilgung</label>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text">
+					<input type="checkbox" ng-model="sonderTilgung.checked">
+				</div>
+			</div>
+			<input type="number" class="form-control" placeholder="1.000" ng-disabled="sonderTilgung.checked == false" ng-model="sonderTilgung.value">
+			<div class="input-group-append">
+    			<span class="input-group-text">€</span>
+  			</div>
+		</div>
+	</div>
+	<div class="col-lg-2">
+		<label for="calculate_btn">&nbsp;</label>
+		<div class="input-group">
+			<button id="calculate_btn" type="button" class="btn btn-success" ng-click="calculate()">Berechnen</button>
+		</div>
+	</div>
+	<pre>loan = {{sonderTilgung | json}}</pre>
